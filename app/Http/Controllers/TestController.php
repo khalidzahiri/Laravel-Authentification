@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -13,6 +14,9 @@ class TestController extends Controller
 
     public function foo()
     {
+        if (!Gate::allows('access-admin')){
+            abort('403');
+        }
         return view('test.foo');
     }
 

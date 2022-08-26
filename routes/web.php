@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['admin'])->group(function() {
     Route::get('/foo','App\Http\Controllers\TestController@foo');
     Route::get('/bar','App\Http\Controllers\TestController@bar');
 });

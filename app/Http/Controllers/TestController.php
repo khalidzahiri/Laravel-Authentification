@@ -12,7 +12,7 @@ class TestController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('bar');
+//        $this->middleware('auth')->except('bar');
     }
 
     public function foo()
